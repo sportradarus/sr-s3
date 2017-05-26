@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/sportradarus/sr-s3.svg?token=RGTUq73CYFYizZssDyk2&branch=master)](https://travis-ci.com/sportradarus/sr-s3) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Build Status](https://travis-ci.org/sportradarus/sr-s3.svg?branch=master)](https://travis-ci.org/sportradarus/sr-s3) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![npm](https://img.shields.io/badge/npm-v3.8.6-blue.svg)]() [![node](https://img.shields.io/badge/node-v6.10.0-blue.svg)]()
 # sr-s3 by Sportradar 
 
