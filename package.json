@@ -1,0 +1,26 @@
+{
+  "name": "sr-s3",
+  "description": "sportradar aws s3 wrapper",
+  "version": "0.0.1",
+  "homepage": "http://sportradar.com",
+  "author": "Sportradar",
+  "main": "index.js",
+   "scripts": {
+    "test": "standard"
+  },
+  "engines": {
+    "node": "6.10",
+    "npm": "3.8.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sportradarus/sr-s3"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.40.0",
+    "aws-xray-sdk": "1.1.1"
+  },
+  "devDependencies": {
+    "standard": "^9.0.2"
+  }
+}
