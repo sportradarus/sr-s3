@@ -55,10 +55,11 @@ function get (bucket, fileName) {
   return s3.getObject(options).promise()
 }
 
-function getStream (bucket, fileName) {
+function getStream (bucket, fileName, contentType) {
   const options = {
     Bucket: bucket,
-    Key: fileName
+    Key: fileName,
+    ResponseContentType: contentType
   }
   return s3.getObject(options).createReadStream()
 }
