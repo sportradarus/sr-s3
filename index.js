@@ -6,6 +6,8 @@ AWS.config.update({region: process.env.AWS_REGION || 'us-west-2'})
 const s3 = new AWS.S3()
 
 function uploadJSON (bucket, fileName, content, acl = 'private', maxAge = 1800) {
+  console.log('maxAge', maxAge);
+
   // only stringify if not already a string
   if (typeof content !== 'string') {
     content = JSON.stringify(content)
@@ -18,6 +20,9 @@ function uploadJSON (bucket, fileName, content, acl = 'private', maxAge = 1800) 
     CacheControl: 'max-age=' + maxAge,
     Body: Buffer.from(content).toString('utf8')
   }
+
+  console.log('opts', opts)
+
   return s3.upload(opts).promise()
 }
 
