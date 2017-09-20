@@ -5,7 +5,10 @@ const AWS = AWSXRay.captureAWS(require('aws-sdk'))
 AWS.config.update({region: process.env.AWS_REGION || 'us-west-2'})
 const s3 = new AWS.S3()
 
-function uploadJSON (bucket, fileName, content, acl = 'private', maxAge = 1800) {
+function uploadJSON (bucket, fileName, content, acl = 'private', maxAge) {
+  console.log('bucket', bucket);
+  console.log('fileName', fileName);
+  console.log('acl', acl);
   console.log('maxAge', maxAge);
 
   // only stringify if not already a string
