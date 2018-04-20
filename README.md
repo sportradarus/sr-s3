@@ -63,16 +63,16 @@ Returns an object containing:
 * `S3 key`
 
 
-### s3.uploadBuffer(bucket, fileName, content, contentType, contentLength, acl, maxAge) 
-upload a buffer to s3
+### s3.upload(bucket, fileName, content, contentType, contentLength, acl, maxAge) 
+upload to s3
 
 * `bucket` destination bucket name
 * `fileName` the file name
-* `content` the JSON object to be stored
+* `content` the content stored
 * `contentType` the type of content
-* `contentLength` the total length of the content
+* [`contentLength`] the total length of the content --defaults to undefined
 * [`acl`]  S3 Access Control Lists (e.g. private, public-read, etc) --defaults to private
-* [`maxAge`] used for setting cache-control max age --defaults to 604800
+* [`maxAge`] used for setting cache-control max age --defaults to 0
 
 Returns an object containing:
 * `S3 location`

@@ -17,8 +17,7 @@
     "url": "https://github.com/sportradarus/sr-s3"
   },
   "dependencies": {
-    "aws-sdk": "^2.40.0",
-    "aws-xray-sdk": "1.1.1"
+    "aws-sdk": "^2.224.1"
   },
   "devDependencies": {
     "standard": "^9.0.2"

@@ -1,6 +1,5 @@
 const fs = require('fs')
-const AWSXRay = require('aws-xray-sdk')
-const AWS = AWSXRay.captureAWS(require('aws-sdk'))
+const AWS = require('aws-sdk')
 
 AWS.config.update({region: process.env.AWS_REGION || 'us-west-2'})
 const s3 = new AWS.S3()
@@ -21,7 +20,7 @@ function uploadJSON (bucket, fileName, content, acl = 'private', maxAge = 1800) 
   return s3.upload(opts).promise()
 }
 
-function uploadBuffer (bucket, fileName, content, contentType, contentLength, acl = 'private', maxAge = 604800) {
+function upload (bucket, fileName, content, contentType, contentLength, acl = 'private', maxAge = 0) {
   const options = {
     Bucket: bucket,
     Key: fileName,
@@ -95,7 +94,6 @@ function listObjectsFull (bucket) {
     if (!isTruncated) {
       return Promise.resolve()
     }
-    console.log('m', marker)
     return listObjects(bucket, marker)
     .then((data) => {
       let dataTruncated = data.IsTruncated
@@ -137,7 +135,7 @@ function remove (bucket, fileName) {
 
 module.exports = {
   uploadJSON,
-  uploadBuffer,
+  upload,
   getJSONFile,
   get,
   getStream,
