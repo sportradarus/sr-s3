@@ -104,6 +104,14 @@ gets a json file from S3
 
 Returns a read stream
 
+### s3.getSignedUrl(bucket, fileName)
+gets a signed URL for the file in S3
+
+* `bucket` bucket name
+* `fileName` the file to get the URL for
+
+Returns a URL
+
 ### s3.download(bucket, fileName, destination)
 downloads a file from S3
 
