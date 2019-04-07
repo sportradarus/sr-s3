@@ -63,12 +63,24 @@ function getStream (bucket, fileName, contentType) {
   return s3.getObject(options).createReadStream()
 }
 
-function getSignedUrl (bucket, fileName) {
-  const options = {
-    Bucket: bucket,
-    Key: fileName
-  }
-  return s3.getSignedUrl('getObject', options)
+function getSignedUrl (operation, bucket, fileName) {
+  return new Promise(function (resolve, reject) {
+    const options = {
+      Bucket: bucket,
+      Key: fileName
+    }
+    // getObject is synchronous
+    if (operation === 'getObject') return resolve(s3.getSignedUrl(operation, options))
+    // putObject is async
+    else if (operation === 'putObject') {
+      s3.getSignedUrl(operation, options, function (err, url) {
+        if (err) return reject(err)
+        else return resolve(url)
+      })
+    }
+    // operation not supported
+    return reject(new Error('Operation not supported'))
+  })
 }
 
 function download (bucket, fileName, destination = './') {
