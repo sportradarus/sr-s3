@@ -5,7 +5,7 @@
   "homepage": "http://sportradar.com",
   "author": "Sportradar",
   "main": "index.js",
-   "scripts": {
+  "scripts": {
     "test": "standard"
   },
   "engines": {

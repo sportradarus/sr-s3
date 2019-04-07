@@ -63,6 +63,14 @@ function getStream (bucket, fileName, contentType) {
   return s3.getObject(options).createReadStream()
 }
 
+function getSignedUrl (bucket, fileName) {
+  const options = {
+    Bucket: bucket,
+    Key: fileName
+  }
+  return s3.getSignedUrl('getObject', options)
+}
+
 function download (bucket, fileName, destination = './') {
   return new Promise(function (resolve, reject) {
     const opts = {
@@ -139,6 +147,7 @@ module.exports = {
   getJSONFile,
   get,
   getStream,
+  getSignedUrl,
   download,
   listObjects,
   listObjectsFull,
