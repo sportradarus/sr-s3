@@ -104,9 +104,10 @@ gets a json file from S3
 
 Returns a read stream
 
-### s3.getSignedUrl(bucket, fileName)
+### s3.getSignedUrl(operation, bucket, fileName)
 gets a signed URL for the file in S3
 
+* `operation` name of the operation to call
 * `bucket` bucket name
 * `fileName` the file to get the URL for
 
