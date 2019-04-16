@@ -107,7 +107,7 @@ Returns a read stream
 ### s3.getSignedUrl(operation, bucket, fileName)
 gets a signed URL for the file in S3
 
-* `operation` name of the operation to call
+* `operation` name of the operation to call: _getObject_ or _putObject_
 * `bucket` bucket name
 * `fileName` the file to get the URL for
 
