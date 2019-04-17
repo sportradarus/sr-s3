@@ -1,11 +1,11 @@
 {
   "name": "sr-s3",
   "description": "sportradar aws s3 wrapper",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "homepage": "http://sportradar.com",
   "author": "Sportradar",
   "main": "index.js",
-   "scripts": {
+  "scripts": {
     "test": "standard"
   },
   "engines": {
